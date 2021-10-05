@@ -12,6 +12,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
+using apiweb.Db;
+using Microsoft.EntityFrameworkCore;
+
+using AutoMapper;
+
 namespace apiweb
 {
     public class Startup
@@ -32,6 +37,14 @@ namespace apiweb
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "apiweb", Version = "v1" });
             });
+
+            //añadir servicio DBContext
+            services.AddDbContext<ApplicationDbContext>(options =>                
+                options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")                            
+            ));
+            //añadir servicio automapper
+            services.AddAutoMapper(typeof(Startup));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,7 +55,7 @@ namespace apiweb
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "apiweb v1"));
-            }
+            }          
 
             app.UseHttpsRedirection();
 
