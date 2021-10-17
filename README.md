@@ -44,12 +44,19 @@ $ dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
 ## crear carpeta utilidades
 -crear fichero "AutoMapperProfiles.cs" para el mapeo las tablas
 
-## migracion
-- nombre de la migracion: Initial
+## migracion y cracion BD
+1. creo una migracion:
 $ dotnet ef migrations add Initial
+2. crear la BD y schema:
+$ dotnet ef database update
 
 ## remover migracion
 $ dotnet ef migrations remove
 
+## crear BD UserAPI
+
 ## endpoints
 https://localhost:5001/swagger/index.html
+
+## Postman
+(Post) https://localhost:5001/api/user

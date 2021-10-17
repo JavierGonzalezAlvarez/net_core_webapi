@@ -9,7 +9,7 @@ using apiweb.Db;
 namespace apiweb.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211005174627_Initial")]
+    [Migration("20211017101616_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
