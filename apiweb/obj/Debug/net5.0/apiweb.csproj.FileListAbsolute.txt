@@ -22,7 +22,6 @@
 /home/javier/Escritorio/Proyectos/net/net_core_api/apiweb/obj/Debug/net5.0/staticwebassets/apiweb.StaticWebAssets.xml
 /home/javier/Escritorio/Proyectos/net/net_core_api/apiweb/obj/Debug/net5.0/scopedcss/bundle/apiweb.styles.css
 /home/javier/Escritorio/Proyectos/net/net_core_api/apiweb/obj/Debug/net5.0/apiweb.RazorTargetAssemblyInfo.cache
-/home/javier/Escritorio/Proyectos/net/net_core_api/apiweb/obj/Debug/net5.0/apiweb.csproj.CopyComplete
 /home/javier/Escritorio/Proyectos/net/net_core_api/apiweb/obj/Debug/net5.0/apiweb.dll
 /home/javier/Escritorio/Proyectos/net/net_core_api/apiweb/obj/Debug/net5.0/ref/apiweb.dll
 /home/javier/Escritorio/Proyectos/net/net_core_api/apiweb/obj/Debug/net5.0/apiweb.pdb

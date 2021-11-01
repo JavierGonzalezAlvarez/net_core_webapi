@@ -45,7 +45,7 @@ namespace apiweb.Controllers
             return mapper.Map<List<UserDTO>>(user);
         }
 
-        [HttpPost]
+        [HttpPost]  //acción de respuesta
         public async Task<ActionResult> Post([FromBody] UserDTO userDTO)
         {
             var user = mapper.Map<User>(userDTO);
@@ -53,6 +53,22 @@ namespace apiweb.Controllers
             await context.SaveChangesAsync();
             return NoContent();
         }
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var user = await context.User.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            context.Remove(user);
+            await context.SaveChangesAsync();
+            return NoContent();
+        }
+
 
     }
 }
