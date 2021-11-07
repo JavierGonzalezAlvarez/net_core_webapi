@@ -58,13 +58,24 @@ namespace apiweb.Controllers
         public async Task<ActionResult> Delete(int id)
         {
             var user = await context.User.FirstOrDefaultAsync(x => x.Id == id);
-
             if (user == null)
             {
                 return NotFound();
             }
-
             context.Remove(user);
+            await context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> Put(int id, [FromBody] UserDTO userDTO)
+        {
+            var user = await context.User.FirstOrDefaultAsync(x => x.Id == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            user = mapper.Map(userDTO, user);
             await context.SaveChangesAsync();
             return NoContent();
         }
